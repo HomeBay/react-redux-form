@@ -4,7 +4,7 @@ import get from '../../utils/get';
 import shallowEqual from '../../utils/shallow-equal';
 import isPlainObject from '../../utils/is-plain-object';
 import mapValues from '../../utils/map-values';
-import { createInitialState } from '../form-reducer';
+import createInitialState from '../../utils/create-initial-state';
 import initialFieldState from '../../constants/initial-field-state';
 import assocIn from '../../utils/assoc-in';
 import getFormValue from '../../utils/get-form-value';

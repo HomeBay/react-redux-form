@@ -1,21 +1,12 @@
 import _get from '../utils/get';
 import arraysEqual from '../utils/arrays-equal';
-import isPlainObject from '../utils/is-plain-object';
 import toPath from '../utils/to-path';
 import composeReducers from '../utils/compose-reducers';
 import createBatchReducer from '../enhancers/batched-enhancer';
+import createInitialState from '../utils/create-initial-state';
 
 import changeActionReducer from './form/change-action-reducer';
 import { createFormActionsReducer } from './form-actions-reducer';
-import createFieldState, { createFormState } from '../utils/create-field';
-
-export function createInitialState(model, state, customInitialFieldState = {}, options = {}) {
-  if (Array.isArray(state) || isPlainObject(state)) {
-    return createFormState(model, state, customInitialFieldState, options);
-  }
-
-  return createFieldState(model, state, customInitialFieldState, options);
-}
 
 function wrapFormReducer(plugin, modelPath, initialState) {
   return (state = initialState, action) => {

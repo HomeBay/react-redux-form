@@ -1,7 +1,7 @@
 import i from 'icepick';
 import get from './get';
 import mapValues from './map-values';
-import { createInitialState } from '../reducers/form-reducer';
+import createInitialState from './create-initial-state';
 import { updateFieldState } from './create-field';
 import assocIn from './assoc-in';
 import invariant from 'invariant';
